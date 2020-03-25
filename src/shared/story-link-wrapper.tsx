@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 const fireClickAction = action('onLinkClick');
 
-export interface StoryLinkWrapperProps {
+type StoryLinkWrapperProps = {
   children: ReactNode;
   className?: string;
   href?: string;

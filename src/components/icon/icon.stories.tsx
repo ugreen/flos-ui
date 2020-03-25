@@ -4,12 +4,16 @@ import styled, { css } from "styled-components";
 import { Icon } from "./icon";
 import { icons } from "../../shared/icons";
 
+type IconProps = {
+    minimal?: boolean;
+}
+
 const Meta = styled.div`
   color: #666;
   font-size: 12px;
 `;
 
-const Item = styled.li`
+const Item = styled.li<IconProps>`
   display: inline-flex;
   flex-direction: row;
   align-items: center;

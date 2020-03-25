@@ -2,42 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="426445a0-d0d1-45cb-bc6b-268338c54861" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/greenie.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/flos-ui.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.storybook/preview-head.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.storybook/preview.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom-types/styled-components/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/avatar/avatar.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/avatar/avatar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/button/button.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/button/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icon/icon.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icon/icon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/animation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/global.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/icons.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/story-link-wrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src2/Badge.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src2/Badge.stories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src2/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src2/Button.stories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src2/Link.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src2/Link.stories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src2/StoryLinkWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.storybook/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/0-Welcome.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/welcome.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/1-Button.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Test.stories.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/Test.stories.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom-types/styled-components/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/custom-types/styled-components/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/button.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon/icon.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon/icon.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/story-link-wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/story-link-wrapper.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +36,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="13.11.0" />
+    <property name="js.last.introduce.type" value="LET" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/shared" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -77,7 +49,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -109,7 +81,8 @@
       <workItem from="1584939803476" duration="6709000" />
       <workItem from="1584967108415" duration="50000" />
       <workItem from="1584967179633" duration="12798000" />
-      <workItem from="1585067644575" duration="710000" />
+      <workItem from="1585067644575" duration="4186000" />
+      <workItem from="1585080800218" duration="10890000" />
     </task>
     <servers />
   </component>
@@ -125,10 +98,10 @@
       <screen x="0" y="23" width="2560" height="1362" />
     </state>
     <state x="695" y="290" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.2560.1362@0.23.2560.1362" timestamp="1584967154474" />
-    <state x="789" y="343" key="SettingsEditor" timestamp="1585076201177">
+    <state x="789" y="343" key="SettingsEditor" timestamp="1585080517272">
       <screen x="0" y="23" width="2560" height="1362" />
     </state>
-    <state x="789" y="343" key="SettingsEditor/-1280.663.1280.777/0.23.2560.1362@0.23.2560.1362" timestamp="1585076201177" />
+    <state x="789" y="343" key="SettingsEditor/-1280.663.1280.777/0.23.2560.1362@0.23.2560.1362" timestamp="1585080517272" />
     <state x="789" y="343" key="SettingsEditor/0.23.2560.1362@0.23.2560.1362" timestamp="1584940319850" />
   </component>
 </project>

@@ -1,8 +1,9 @@
-import React, {Fragment, ReactNode, useMemo} from "react";
-import styled from "styled-components";
-import { darken, rgba } from "polished";
-import { color, typography } from "../../shared/styles";
-import { easing } from "../../shared/animation";
+import React, {Fragment, ReactNode} from 'react';
+import styled from 'styled-components';
+import { darken, rgba } from 'polished';
+import { color, typography } from '../../shared/styles';
+import { easing } from '../../shared/animation';
+import { useId } from '../../shared/hooks';
 
 const Text = styled.span`
   display: inline-block;
@@ -18,23 +19,22 @@ const Loading = styled.span`
 `;
 
 const APPEARANCES = {
-  PRIMARY: "primary",
-  PRIMARY_OUTLINE: "primaryOutline",
-  SECONDARY: "secondary",
-  SECONDARY_OUTLINE: "secondaryOutline",
-  TERTIARY: "tertiary",
-  OUTLINE: "outline",
+  PRIMARY: 'primary',
+  PRIMARY_OUTLINE: 'primaryOutline',
+  SECONDARY: 'secondary',
+  SECONDARY_OUTLINE: 'secondaryOutline',
+  TERTIARY: 'tertiary',
+  OUTLINE: 'outline',
 } as const;
 
 const SIZES = {
-  SMALL: "small",
-  MEDIUM: "medium",
+  SMALL: 'small',
+  MEDIUM: 'medium',
 } as const;
 
 type ValueOf<T> = T[keyof T];
 
-
-type ButtonProps = {
+type SharedProps = {
   isDisabled?: boolean;
   isLoading?: boolean;
   loadingText?: ReactNode;
@@ -45,17 +45,31 @@ type ButtonProps = {
   size?: ValueOf<typeof SIZES>;
   ButtonWrapper?: ReactNode | string;
   className?: string;
-  children: ReactNode;
 }
 
-const StyledButton = styled.button`
+
+type ButtonProps = SharedProps & JSX.IntrinsicElements['button'];
+
+type AnchorProps = SharedProps & JSX.IntrinsicElements['a'];
+
+type LinkProps = Omit<AnchorProps, 'href'> & { to?: string };
+
+type AllProps = ButtonProps & AnchorProps & LinkProps
+
+type Button = {
+  // todo: fix typing this: as?: React.FunctionComponent | string;
+  as?: any;
+  children: ReactNode;
+} & AllProps;
+
+
+const StyledButton = styled.button<Button>`
   border: 0;
   border-radius: 3em;
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
-  padding: ${(props: ButtonProps) =>
-    props.size === SIZES.SMALL ? "8px 16px" : "13px 20px"};
+  padding: ${props => props.size === SIZES.SMALL ? '8px 16px' : '13px 20px'};
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -106,12 +120,12 @@ const StyledButton = styled.button`
   }
 
   svg {
-    height: ${(props) => (props.size === SIZES.SMALL ? "14" : "16")}px;
-    width: ${(props) => (props.size === SIZES.SMALL ? "14" : "16")}px;
+    height: ${(props) => (props.size === SIZES.SMALL ? '14' : '16')}px;
+    width: ${(props) => (props.size === SIZES.SMALL ? '14' : '16')}px;
     vertical-align: top;
-    margin-right: ${(props) => (props.size === SIZES.SMALL ? "4" : "6")}px;
-    margin-top: ${(props) => (props.size === SIZES.SMALL ? "-1" : "-2")}px;
-    margin-bottom: ${(props) => (props.size === SIZES.SMALL ? "-1" : "-2")}px;
+    margin-right: ${(props) => (props.size === SIZES.SMALL ? '4' : '6')}px;
+    margin-top: ${(props) => (props.size === SIZES.SMALL ? '-1' : '-2')}px;
+    margin-bottom: ${(props) => (props.size === SIZES.SMALL ? '-1' : '-2')}px;
 
     /* Necessary for js mouse events to not glitch out when hovering on svgs */
     pointer-events: none;
@@ -166,7 +180,7 @@ const StyledButton = styled.button`
         display: block;
         margin: 0;
       }
-      padding: ${props.size === SIZES.SMALL ? "7" : "12"}px;
+      padding: ${props.size === SIZES.SMALL ? '7' : '12'}px;
     `}
 
   ${(props) =>
@@ -337,61 +351,56 @@ const StyledButton = styled.button`
 
 `;
 
-const ButtonLink: any = StyledButton.withComponent("a");
-
-const applyStyle = (ButtonWrapper: any) => {
+const BaseButton = (props: Button) => {
+  const { children, ...rest } = props;
+  let Component = props.as;
+  if (!Component) {
+    Component = 'button';
+  }
+  const StyledComponent = StyledButton.withComponent(Component);
   return (
-    ButtonWrapper &&
-    StyledButton.withComponent(
-      ({ containsIcon, isLoading, isUnclickable, ...rest }) => (
-        <ButtonWrapper {...rest} />
-      )
-    )
+    <StyledComponent {...rest}>
+      {children}
+    </StyledComponent>
   );
 };
 
-export const Button = ({
-  isDisabled,
-  isLoading,
+export const Button = React.forwardRef(function ButtonComp({
+  isDisabled = false,
+  isLoading = false,
   loadingText,
   isLink,
   children,
-  ButtonWrapper,
-  ...props
-}: ButtonProps) => {
+  id,
+  type, ...props
+}: Button, ref: any) {
   const buttonInner = (
     <Fragment>
       <Text>{children}</Text>
-      {isLoading && <Loading>{loadingText || "Loading..."}</Loading>}
+      {isLoading && <Loading>{loadingText || 'Loading...'}</Loading>}
     </Fragment>
   );
 
-  const StyledButtonWrapper = useMemo(() => applyStyle(ButtonWrapper), [
-    ButtonWrapper,
-  ]);
+  const uniqueId = useId(id);
 
-  let SelectedButton = StyledButton;
-  if (ButtonWrapper) {
-    SelectedButton = StyledButtonWrapper;
-  } else if (isLink) {
-    SelectedButton = ButtonLink;
+  let tag = 'button';
+
+  if ('href' in props) {
+    tag = 'a';
   }
 
   return (
-    <SelectedButton isLoading={isLoading} disabled={isDisabled} {...props}>
+    <BaseButton
+        isLoading={isLoading}
+        disabled={isDisabled}
+        ref={ref}
+        id={id}
+        type={type}
+        key={`${uniqueId}--${type}`}
+        as={tag}
+        {...props}
+    >
       {buttonInner}
-    </SelectedButton>
+    </BaseButton>
   );
-};
-
-Button.defaultProps = {
-  isLoading: false,
-  loadingText: null,
-  isLink: false,
-  appearance: APPEARANCES.TERTIARY,
-  isDisabled: false,
-  isUnclickable: false,
-  containsIcon: false,
-  size: SIZES.MEDIUM,
-  ButtonWrapper: undefined,
-};
+});
