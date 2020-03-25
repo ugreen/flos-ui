@@ -5,9 +5,25 @@ import { glow } from "../../shared/animation";
 import { Icon } from "../icon/icon";
 
 type AvatarProps = {
+  /**
+   * Use the loading state to indicate that the data Avatar needs is still loading.
+   */
   loading?: boolean;
+
+  /**
+   * Avatar falls back to the user's initial when no image is provided.
+   * Supply a `username` and omit `src` to see what this looks like.
+   */
   username?: string;
+
+  /**
+   * The URL of the Avatar's image.
+   */
   src?: string | null;
+
+  /**
+   * Avatar comes in four sizes. In most cases, you'll be fine with `medium`.
+   */
   size?: keyof typeof sizes;
 }
 
@@ -109,6 +125,10 @@ const Initial = styled.div`
   `}
 `;
 
+/**
+ * - Use an avatar for attributing actions or content to specific users.
+ * - The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
+ **/
 export function Avatar({ loading = false, username = 'loading', src, size = 'medium', ...props }: AvatarProps) {
   let avatarFigure = <Icon icon="useralt" />;
   const a11yProps: A11yProps = {};
