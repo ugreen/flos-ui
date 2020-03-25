@@ -22,7 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "CHROMATIC_APP_CODE=oqt8vmkm9x8 chromatic"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -50,6 +51,7 @@
     "@storybook/react": "^5.3.17",
     "@types/styled-components": "^5.0.1",
     "polished": "^3.5.1",
-    "prettier": "^2.0.1"
+    "prettier": "^2.0.1",
+    "storybook-chromatic": "^3.5.2"
   }
 }
