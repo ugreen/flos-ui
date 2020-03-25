@@ -9,6 +9,7 @@ module.exports = {
         '@storybook/preset-create-react-app',
         '@storybook/addon-storysource/register',
         '@storybook/addon-knobs/register',
+        '@storybook/addon-a11y/register',
         {
             name: '@storybook/addon-docs',
             options: {
