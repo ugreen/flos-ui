@@ -4,7 +4,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Visual regression test
+    name: flos-ui
     steps:
       - name: Code checkout
         uses: actions/checkout@v1
@@ -25,3 +25,4 @@ jobs:
         run: yarn release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
