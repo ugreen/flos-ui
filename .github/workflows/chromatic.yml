@@ -4,11 +4,19 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    name: Visual regression test
     steps:
-      - uses: actions/checkout@v1
-      - run: |
-          yarn && yarn build
-      - uses: chromaui/action@v1
+      - name: Code checkout
+        uses: actions/checkout@v1
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Build project
+        run: yarn build
+      - name: Build storybook
+        run: yarn build-storybook
+      - name: Chromatic test
+        uses: chromaui/action@v1
         with:
           appCode: ${{ secrets.CHROMATIC_APP_CODE }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          storybookBuildDir: storybook-static
