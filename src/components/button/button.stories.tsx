@@ -1,8 +1,7 @@
 import React from "react";
-import { action } from "@storybook/addon-actions";
 
 import { Button } from "./button";
-import { Icon } from "../icon/icon";
+import { Icon } from "../..";
 
 
 export default {
@@ -64,7 +63,7 @@ export const allButtons = () => (
 );
 
 allButtons.story = {
-  name: "all buttons",
+  name: "all-buttons",
 };
 
 export const anchorWrapper = () => (
@@ -207,5 +206,5 @@ export const anchorWrapper = () => (
 );
 
 anchorWrapper.story = {
-  name: "anchor wrapper",
+  name: "anchor-wrapper",
 };

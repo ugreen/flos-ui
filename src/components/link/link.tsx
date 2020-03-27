@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import styled, {AnyStyledComponent, css} from 'styled-components';
 import { darken } from 'polished';
 
-import { Icon } from '../icon/icon';
+import { Icon } from '../..';
 import { color } from '../../shared/styles';
 
 type SharedProps = {
@@ -19,8 +19,6 @@ type SharedProps = {
 
 type LinkProps = SharedProps & JSX.IntrinsicElements['a'];
 type LinkPropsAsButton = SharedProps & JSX.IntrinsicElements['button'];
-type LinkPropsAsSpan = SharedProps & JSX.IntrinsicElements['span'];
-type AllProps = LinkProps | LinkPropsAsButton;
 
 const linkStyles = css<LinkProps>`
   display: inline-block;
