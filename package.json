@@ -29,7 +29,7 @@
     "build-storybook": "build-storybook -s public",
     "build-storybook-docs": "build-storybook -s public --docs",
     "chromatic": "chromatic",
-    "release": "auto shipit"
+    "release": "auto shipit --verbose"
   },
   "eslintConfig": {
     "extends": "react-app"
