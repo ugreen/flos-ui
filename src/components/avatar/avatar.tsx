@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { color, typography } from "../../shared/styles";
 import { glow } from "../../shared/animation";
-import { Icon } from "../icon/icon";
+import { Icon } from "../..";
 
 type AvatarProps = {
   /**
@@ -129,7 +129,7 @@ const Initial = styled.div`
  * - Use an avatar for attributing actions or content to specific users.
  * - The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
  **/
-export function Avatar({ loading = false, username = 'loading', src, size = 'medium', ...props }: AvatarProps) {
+export const Avatar = ({ loading = false, username = 'loading', src, size = 'medium', ...props }: AvatarProps) => {
   let avatarFigure = <Icon icon="useralt" />;
   const a11yProps: A11yProps = {};
 

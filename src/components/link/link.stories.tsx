@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
-import { Icon } from '../icon/icon';
+import { Icon } from '../..';
 import { Link } from './link';
 import StoryLinkWrapper from '../../shared/story-link-wrapper';
 
