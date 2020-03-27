@@ -11,7 +11,6 @@ export const users = [
   {
     id: '2',
     name: 'Tom Coleman',
-    avatarUrl: 'https://avatars2.githubusercontent.com/u/132554',
   },
   {
     id: '3',
