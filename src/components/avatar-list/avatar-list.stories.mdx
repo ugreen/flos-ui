@@ -1,4 +1,4 @@
-import React from 'react';
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 
 import { AvatarList } from './avatar-list';
 
@@ -34,15 +34,33 @@ export const users = [
   },
 ];
 
-export default {
-  title: 'Components|AvatarList',
-  component: AvatarList,
-  excludeStories: ['users'],
-};
+<Meta title="Components|AvatarList" component={AvatarList} />
 
-export const short = () => <AvatarList users={users.slice(0, 2)} />;
-export const smallSize = () => <AvatarList users={users.slice(0, 2)} size="small" />;
-export const loading = () => <AvatarList loading />;
-export const ellipsized = () => <AvatarList users={users} />;
-export const bigUserCount = () => <AvatarList users={users} userCount={100} />;
-export const empty = () => <AvatarList users={[]} />;
+<Story name="short">
+    <AvatarList users={users.slice(0, 2)} />
+</Story>
+
+<Story name="smallSize">
+    <AvatarList users={users.slice(0, 2)} size="small" />
+</Story>
+
+<Story name="loading">
+    <AvatarList loading />
+</Story>
+
+<Story name="ellipsized">
+    <AvatarList users={users} />
+</Story>
+
+<Story name="empty">
+    <AvatarList users={[]} />
+</Story>
+
+
+<Preview withToolbar>
+  <Story name="bigUserCount">
+    <AvatarList users={users} userCount={100} />
+  </Story>
+</Preview>
+
+<Props of={AvatarList} />
