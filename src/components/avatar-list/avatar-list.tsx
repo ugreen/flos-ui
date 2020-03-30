@@ -11,7 +11,7 @@ type UserProps = {
 }
 
 type AvatarListProps = {
-  loading?: boolean;
+  loading?: boolean | number;
   userCount?: number;
   size?: keyof typeof sizes;
   users?: UserProps[];
@@ -78,7 +78,7 @@ export const AvatarList = ({
     <Users aria-label="users" {...props}>
       {users.slice(0, 3).map(({ id, name, avatarUrl }: UserProps) => (
         <User key={id}>
-          <UserAvatar size={size} username={name} src={avatarUrl} loading={loading} />
+          <UserAvatar size={size} username={name} src={avatarUrl} loading={loading ? 1 : 0} />
         </User>
       ))}
       {count > 3 && (
