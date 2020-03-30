@@ -39,8 +39,8 @@ export const sizes = {
   tiny: 16,
 } as const;
 
-const Image = styled.div`
-  background: ${(props: AvatarProps) => (!props.loading ? "transparent" : color.light)};
+const Image = styled.div<any>`
+  background: ${props => (!props.loading ? "transparent" : color.light)};
   border-radius: 50%;
   display: inline-block;
   vertical-align: top;
@@ -51,33 +51,25 @@ const Image = styled.div`
   width: ${sizes.medium}px;
   line-height: ${sizes.medium}px;
 
-  ${(props: AvatarProps) =>
-    props.size === "tiny" &&
-    css`
+  ${props => props.size === "tiny" && css`
       height: ${sizes.tiny}px;
       width: ${sizes.tiny}px;
       line-height: ${sizes.tiny}px;
     `}
 
-  ${(props: AvatarProps) =>
-    props.size === "small" &&
-    css`
+  ${props => props.size === "small" && css`
       height: ${sizes.small}px;
       width: ${sizes.small}px;
       line-height: ${sizes.small}px;
     `}
 
-  ${(props: AvatarProps) =>
-    props.size === "large" &&
-    css`
+  ${props => props.size === "large" && css`
       height: ${sizes.large}px;
       width: ${sizes.large}px;
       line-height: ${sizes.large}px;
     `}
 
-  ${(props: AvatarProps) =>
-    !props.src &&
-    css`
+  ${props => !props.src && css`
       background: ${!props.loading && "#37D5D3"};
     `}
 
@@ -148,8 +140,8 @@ export const Avatar = ({ loading = false, username = 'loading', src, size = 'med
   }
 
   return (
-    <Image size={size} loading={loading} src={src} {...a11yProps} {...props}>
+    <Image size={size} loading={loading ? 1 : 0} src={src} {...a11yProps} {...props}>
       {avatarFigure}
     </Image>
   );
-}
+};

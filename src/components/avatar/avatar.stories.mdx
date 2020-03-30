@@ -75,10 +75,10 @@ The loading state is used when the image or username is, well, loading.
 
 <Story name="loading">
   <div>
-    <Avatar size="large" loading />
-    <Avatar size="medium" loading />
-    <Avatar size="small" loading />
-    <Avatar size="tiny" loading />
+    <Avatar size="large" loading="true" />
+    <Avatar size="medium" loading="true" />
+    <Avatar size="small" loading="true" />
+    <Avatar size="tiny" loading="true" />
   </div>
 </Story>
 
@@ -86,9 +86,9 @@ The loading state is used when the image or username is, well, loading.
 
 Experiment with this story with Knobs addon in Canvas mode.
 
-<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+<Story name="knobs" decorators={[withKnobs]}>
   <Avatar
-    loading={boolean('Loading')}
+    loading={boolean('Loading', false)}
     size={select('Size', ['tiny', 'small', 'medium', 'large'])}
     username="Dominic Nguyen"
     src="https://avatars2.githubusercontent.com/u/263385"

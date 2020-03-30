@@ -30,7 +30,7 @@ const UserEllipses = styled.li`
   white-space: nowrap;
 `;
 
-const User = styled.li`
+const User = styled.li<any>`
   display: inline-flex;
 `;
 
@@ -48,17 +48,16 @@ const Users = styled.ul`
   ${User} {
     position: relative;
 
-    &:not(:first-child) {
-      margin-left: -6px;
-    }
     &:nth-child(1) {
       z-index: 3;
     }
     &:nth-child(2) {
       z-index: 2;
+      margin-left: -6px;
     }
     &:nth-child(3) {
       z-index: 1;
+      margin-left: -6px;
     }
   }
 `;
