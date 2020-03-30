@@ -27,7 +27,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "build-storybook-docs": "build-storybook -s public --docs",
+    "build-storybook-docs": "NODE_ENV=development build-storybook -s public --docs",
     "chromatic": "chromatic",
     "release": "auto shipit --verbose"
   },

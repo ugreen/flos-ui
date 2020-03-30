@@ -19,12 +19,12 @@ export const users = [
   },
   {
     id: '4',
-    name: 'Tim Hingston',
+    name: 'Tim',
     avatarUrl: 'https://avatars3.githubusercontent.com/u/1831709',
   },
   {
     id: '5',
-    name: 'Tim Hingston',
+    name: 'Hingston',
     avatarUrl: 'https://avatars3.githubusercontent.com/u/1831709',
   },
   {

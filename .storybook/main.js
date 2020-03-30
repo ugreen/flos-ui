@@ -17,5 +17,9 @@ module.exports = {
                 configureJSX: true
             }
         }
-    ]
+    ],
+    webpackFinal: async (config, configType) => {
+        config.mode = 'development';
+        return config;
+    }
 };
