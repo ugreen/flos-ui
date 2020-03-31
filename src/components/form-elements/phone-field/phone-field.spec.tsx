@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
-import PhoneField from './FlosTelephoneField';
+import { PhoneField } from './phone-field';
 import { fireEvent, wait } from '@testing-library/react';
 
 interface IFieldData{
@@ -10,18 +10,18 @@ interface IFieldData{
     event: string;
 }
 const testState = {label: 'Telefon', helperText: 'Ugyldig telefonnummer', testId:'flosTelefonField', required: true, fieldData: {} as IFieldData, isError: false};
-const flosTelephoneField = <PhoneField testId={testState.testId} label={testState.label} helperText={testState.helperText} required={testState.required} fieldEvent={(e) => testState.fieldData = e}/>;
+const phoneField = <PhoneField testId={testState.testId} label={testState.label} helperText={testState.helperText} required={testState.required} fieldEvent={(e) => testState.fieldData = e}/>;
 
-describe ('<FlosTelephoneField/> - Component render', ()=> {
+describe ('<PhoneField/> - Component render', ()=> {
     it ('renders without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(flosTelephoneField, div);
+        ReactDOM.render(phoneField, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 
     it('field is not allow string', async () => {
         const { getByTestId } =  ({
-            ...render(flosTelephoneField)
+            ...render(phoneField)
          });
         fireEvent.change(getByTestId('flosTelefonField'), {
             target: {
@@ -34,7 +34,7 @@ describe ('<FlosTelephoneField/> - Component render', ()=> {
 
     it('Check error message is visible in invalid state', async () => {
         const { getByTestId, getByText } =  ({
-            ...render(flosTelephoneField)
+            ...render(phoneField)
         });
         fireEvent.change(getByTestId('flosTelefonField'), {
             target: {
@@ -47,7 +47,7 @@ describe ('<FlosTelephoneField/> - Component render', ()=> {
 
     it('Check blur event validate data', async () => {
         const { getByTestId, getByText } =  ({
-            ...render(flosTelephoneField)
+            ...render(phoneField)
         });
         fireEvent.blur(getByTestId('flosTelefonField'), {
             target: {
@@ -59,8 +59,8 @@ describe ('<FlosTelephoneField/> - Component render', ()=> {
     });
 
     it('Check blur event working correctly', async () => {
-        const { getByTestId, getByText } =  ({
-            ...render(flosTelephoneField)
+        const { getByTestId } =  ({
+            ...render(phoneField)
         });
         fireEvent.blur(getByTestId('flosTelefonField'), {
             target: {
@@ -72,8 +72,8 @@ describe ('<FlosTelephoneField/> - Component render', ()=> {
     });
 
     it('Check change event give the correct output', async () => {
-        const { getByTestId, getByText } =  ({
-            ...render(flosTelephoneField)
+        const { getByTestId } =  ({
+            ...render(phoneField)
         });
         fireEvent.change(getByTestId('flosTelefonField'), {
             target: {
@@ -86,7 +86,7 @@ describe ('<FlosTelephoneField/> - Component render', ()=> {
 
     it('Check field event prop working correctly for valid input', async () => {
         const { getByTestId } =  ({
-            ...render(flosTelephoneField)
+            ...render(phoneField)
         });
         fireEvent.change(getByTestId('flosTelefonField'), {
             target: {
@@ -101,7 +101,7 @@ describe ('<FlosTelephoneField/> - Component render', ()=> {
 
     it('Check field event prop working correctly for invalid input', async () => {
         const { getByTestId } =  ({
-            ...render(flosTelephoneField)
+            ...render(phoneField)
         });
         fireEvent.blur(getByTestId('flosTelefonField'), {
             target: {
