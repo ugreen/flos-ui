@@ -11,6 +11,7 @@ module.exports = {
         '@storybook/addon-storysource/register',
         '@storybook/addon-knobs/register',
         '@storybook/addon-a11y/register',
+        'storybook-addon-material-ui/register',
         {
             name: '@storybook/addon-docs',
             options: {

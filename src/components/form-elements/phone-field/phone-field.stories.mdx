@@ -1,0 +1,39 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+
+import { PhoneField } from './phone-field';
+
+export const onFieldEvent = action('onFieldEvent');
+
+
+<Meta title="Components|Forms|PhoneField" component={PhoneField} />
+
+<Preview withToolbar>
+  <Story name="Phone field">
+    <PhoneField id="phone-field-1" label="Telefonnummer" fieldEvent={onFieldEvent} />
+  </Story>
+</Preview>
+
+### Required
+
+Just add ´required` prop
+
+<Story name="Phone field required">
+    <PhoneField id="phone-field-2" label="Telefonnummer" required fieldEvent={onFieldEvent} />
+</Story>
+
+### Full width
+
+<Story name="Phone field full-width">
+    <PhoneField id="phone-field-3" label="Telefonnummer" fullWidth fieldEvent={onFieldEvent} />
+</Story>
+
+### Disabled
+
+Just add `disabled`prop:
+
+<Story name="Phone field disabled">
+    <PhoneField id="phone-field-4" label="Telefonnummer" disabled fieldEvent={onFieldEvent} />
+</Story>
+
+<Props of={PhoneField} />
