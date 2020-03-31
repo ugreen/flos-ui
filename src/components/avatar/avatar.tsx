@@ -8,7 +8,7 @@ type AvatarProps = {
   /**
    * Use the loading state to indicate that the data Avatar needs is still loading.
    */
-  loading?: boolean;
+  loading?: boolean | number;
 
   /**
    * Avatar falls back to the user's initial when no image is provided.

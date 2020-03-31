@@ -8,7 +8,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
  * Simple function which returns a Palette Object
  * Use - https://in-your-saas.github.io/material-ui-theme-editor/
  */
-export const getPalette = ():PaletteOptions => {
+const getPalette = ():PaletteOptions => {
   return {
     "common": {
       "black": "#000",
@@ -49,7 +49,7 @@ export const getPalette = ():PaletteOptions => {
  * PAJ - Typography fontsFamily ^ FontStyling
  * NOTE - Color for the typography is part of the palette, refer the function above
  */
-export const getTypographyStyling  = (): TypographyOptions => {
+const getTypographyStyling  = (): TypographyOptions => {
   return  {
     fontFamily: [ 'Interstate', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif' ].join(','),
     fontSize: 16,
@@ -76,7 +76,7 @@ export const getTypographyStyling  = (): TypographyOptions => {
   }
 };
 
-export const getOverrideStyles =  (): Overrides => {
+const getOverrideStyles =  (): Overrides => {
   return {
     MuiButton: {
       contained: {
