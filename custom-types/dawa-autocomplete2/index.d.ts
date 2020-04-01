@@ -1,1 +1,1 @@
-declare module 'dawa-autocomplete2';
+declare module "dawa-autocomplete2";
