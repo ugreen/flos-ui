@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import styled, {AnyStyledComponent, css} from 'styled-components';
-import { darken } from 'polished';
+import React, { Fragment } from "react";
+import styled, { AnyStyledComponent, css } from "styled-components";
+import { darken } from "polished";
 
-import { Icon } from '../..';
-import { color } from '../../shared/styles';
+import { Icon } from "../..";
+import { color } from "../../shared/styles";
 
 type SharedProps = {
   isButton?: boolean;
@@ -15,10 +15,10 @@ type SharedProps = {
   nochrome?: boolean;
   secondary?: boolean;
   tertiary?: boolean;
-}
+};
 
-type LinkProps = SharedProps & JSX.IntrinsicElements['a'];
-type LinkPropsAsButton = SharedProps & JSX.IntrinsicElements['button'];
+type LinkProps = SharedProps & JSX.IntrinsicElements["a"];
+type LinkPropsAsButton = SharedProps & JSX.IntrinsicElements["button"];
 
 const linkStyles = css<LinkProps>`
   display: inline-block;
@@ -48,9 +48,9 @@ const linkStyles = css<LinkProps>`
     margin-right: 0.4em;
   }
 
-  ${props =>
-  props.containsIcon &&
-  css`
+  ${(props) =>
+    props.containsIcon &&
+    css`
       svg {
         height: 1em;
         width: 1em;
@@ -61,9 +61,9 @@ const linkStyles = css<LinkProps>`
       }
     `};
 
-  ${props =>
-  props.secondary &&
-  css`
+  ${(props) =>
+    props.secondary &&
+    css`
       color: ${color.mediumdark};
 
       &:hover {
@@ -75,9 +75,9 @@ const linkStyles = css<LinkProps>`
       }
     `};
 
-  ${props =>
-  props.tertiary &&
-  css`
+  ${(props) =>
+    props.tertiary &&
+    css`
       color: ${color.dark};
 
       &:hover {
@@ -89,9 +89,9 @@ const linkStyles = css<LinkProps>`
       }
     `};
 
-  ${props =>
-  props.nochrome &&
-  css`
+  ${(props) =>
+    props.nochrome &&
+    css`
       color: inherit;
 
       &:hover,
@@ -101,9 +101,9 @@ const linkStyles = css<LinkProps>`
       }
     `};
 
-  ${props =>
-  props.inverse &&
-  css`
+  ${(props) =>
+    props.inverse &&
+    css`
       color: ${color.lightest};
 
       &:hover {
@@ -115,9 +115,9 @@ const linkStyles = css<LinkProps>`
       }
     `};
 
-  ${props =>
-  props.isButton &&
-  css`
+  ${(props) =>
+    props.isButton &&
+    css`
       border: 0;
       border-radius: 0;
       background: none;
@@ -127,9 +127,9 @@ const linkStyles = css<LinkProps>`
 `;
 
 const LinkInner = styled.span<any>`
-  ${props =>
-  props.withArrow &&
-  css`
+  ${(props) =>
+    props.withArrow &&
+    css`
       > svg:last-of-type {
         height: 0.7em;
         width: 0.7em;
@@ -161,9 +161,16 @@ const LinkButton = styled.button<LinkPropsAsButton>`
 const applyStyle = (LinkWrapper: AnyStyledComponent) => {
   return (
     LinkWrapper &&
-    styled(({ containsIcon, inverse, nochrome, secondary, tertiary, ...linkWrapperRest }: LinkProps) => (
-      <LinkWrapper {...linkWrapperRest} />
-    ))`
+    styled(
+      ({
+        containsIcon,
+        inverse,
+        nochrome,
+        secondary,
+        tertiary,
+        ...linkWrapperRest
+      }: LinkProps) => <LinkWrapper {...linkWrapperRest} />
+    )`
       ${linkStyles};
     `
   );
@@ -172,7 +179,13 @@ const applyStyle = (LinkWrapper: AnyStyledComponent) => {
 /**
  * Links can contains text and/or icons. Be careful using only icons, you must provide a text alternative via aria-label for accessibility.
  */
-export const Link = ({ isButton, withArrow, LinkWrapper, children, ...rest }: LinkProps) => {
+export const Link = ({
+  isButton,
+  withArrow,
+  LinkWrapper,
+  children,
+  ...rest
+}: LinkProps) => {
   const content = (
     <Fragment>
       <LinkInner withArrow={withArrow}>

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
 /**
  * A hook to returns an id if your component need it but you doesn't want to make it as mandatory props
@@ -13,17 +13,20 @@ let id = new Date().getMilliseconds();
  * generate an unique id for the Javascript session, this is useful when you need an temporary id that will not be persisted
  * @param prefix prefix to be prepended to the id, default to `flos-ui-`
  */
-const getId = (prefix: string = 'flos-ui-') => `${prefix}${id++}`;
+const getId = (prefix: string = "flos-ui-") => `${prefix}${id++}`;
 
-export function useId(providedId: string | undefined, idPrefix?: string): string {
-    const generatedIdRef = useRef<string | null>(null);
-    if (providedId) {
-        return providedId;
-    }
+export function useId(
+  providedId: string | undefined,
+  idPrefix?: string
+): string {
+  const generatedIdRef = useRef<string | null>(null);
+  if (providedId) {
+    return providedId;
+  }
 
-    if (!generatedIdRef.current) {
-        generatedIdRef.current = getId(idPrefix);
-    }
+  if (!generatedIdRef.current) {
+    generatedIdRef.current = getId(idPrefix);
+  }
 
-    return generatedIdRef.current;
+  return generatedIdRef.current;
 }

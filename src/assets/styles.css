@@ -8,89 +8,100 @@ engineer this font software. Please contact WebType with any questions: http://w
   TODO: The URL's for the fonts must be changed for prodduction!!!
 */
 @font-face {
-    font-family: Interstate;
-    src: url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate.eot');
-    src: url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate.eot?') format('embedded-opentype'),
-    url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate.woff') format('woff'),
-    url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
+  font-family: Interstate;
+  src: url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate.eot");
+  src: url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate.eot?")
+      format("embedded-opentype"),
+    url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate.woff")
+      format("woff"),
+    url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate.ttf")
+      format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
 
 @font-face {
-    font-family: Interstate;
-    src: url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-bold.eot');
-    src: url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-bold.eot?') format('embedded-opentype'),
-    url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-bold.woff') format('woff'),
-    url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-bold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: bold;
+  font-family: Interstate;
+  src: url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-bold.eot");
+  src: url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-bold.eot?")
+      format("embedded-opentype"),
+    url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-bold.woff")
+      format("woff"),
+    url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-bold.ttf")
+      format("truetype");
+  font-style: normal;
+  font-weight: bold;
 }
 
 @font-face {
-    font-family: Interstate;
-    src: url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-light.eot');
-    src: url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-light.eot?') format('embedded-opentype'),
-    url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-light.woff') format('woff'),
-    url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-light.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 300;
+  font-family: Interstate;
+  src: url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-light.eot");
+  src: url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-light.eot?")
+      format("embedded-opentype"),
+    url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-light.woff")
+      format("woff"),
+    url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-light.ttf")
+      format("truetype");
+  font-style: normal;
+  font-weight: 300;
 }
 
 @font-face {
-    font-family: Interstate;
-    src: url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-extra-light.eot');
-    src: url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-extra-light.eot?') format('embedded-opentype'),
-    url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-extra-light.woff2') format('woff2'),
-    url('https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-extra-light.woff') format('woff');
-    font-style: normal;
-    font-weight: 100;
+  font-family: Interstate;
+  src: url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-extra-light.eot");
+  src: url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-extra-light.eot?")
+      format("embedded-opentype"),
+    url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-extra-light.woff2")
+      format("woff2"),
+    url("https://flos.webplatform-prod-01.topdanmark.cloud/core/latest/fonts/interstate-extra-light.woff")
+      format("woff");
+  font-style: normal;
+  font-weight: 100;
 }
 
 body {
-    background: #F7F8F7;
-    margin: 0;
-    padding: 0;
-    font-family: Interstate, sans-serif, Arial;
+  background: #f7f8f7;
+  margin: 0;
+  padding: 0;
+  font-family: Interstate, sans-serif, Arial;
 }
 
 .onsa-main-inner-wrapper {
-    max-width: 490px;
-    font-size: calc(10px + 2vmin);
-    color: black;
-    margin: 0 auto;
+  max-width: 490px;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  margin: 0 auto;
 }
 
 .onsa-emoji-icon-wrapper {
-    margin: 22px 0 18px;
+  margin: 22px 0 18px;
 }
 
 .onsa-header {
-    background: #fff;
-    padding: 10px;
+  background: #fff;
+  padding: 10px;
 }
 
 .onsa-action-button-wrapper {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .onsa-content-wrapper-30 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .fadeIn {
-    animation-name: fadeInEffect;
-    animation-duration: 0.5s;
-    transition-timing-function: ease-in;
-    animation-fill-mode: both;
+  animation-name: fadeInEffect;
+  animation-duration: 0.5s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
 }
 
 @keyframes fadeInEffect {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
