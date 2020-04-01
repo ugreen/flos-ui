@@ -1,61 +1,60 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 
-import { AvatarList } from './avatar-list';
+import { AvatarList } from "./avatar-list";
 
 export const users = [
   {
-    id: '1',
-    name: 'Dominic Nguyen',
-    avatarUrl: 'https://avatars2.githubusercontent.com/u/263385',
+    id: "1",
+    name: "Dominic Nguyen",
+    avatarUrl: "https://avatars2.githubusercontent.com/u/263385",
   },
   {
-    id: '2',
-    name: 'Tom Coleman',
+    id: "2",
+    name: "Tom Coleman",
   },
   {
-    id: '3',
-    name: 'Zoltan Olah',
-    avatarUrl: 'https://avatars0.githubusercontent.com/u/81672',
+    id: "3",
+    name: "Zoltan Olah",
+    avatarUrl: "https://avatars0.githubusercontent.com/u/81672",
   },
   {
-    id: '4',
-    name: 'Tim',
-    avatarUrl: 'https://avatars3.githubusercontent.com/u/1831709',
+    id: "4",
+    name: "Tim",
+    avatarUrl: "https://avatars3.githubusercontent.com/u/1831709",
   },
   {
-    id: '5',
-    name: 'Hingston',
-    avatarUrl: 'https://avatars3.githubusercontent.com/u/1831709',
+    id: "5",
+    name: "Hingston",
+    avatarUrl: "https://avatars3.githubusercontent.com/u/1831709",
   },
   {
-    id: '6',
-    name: 'Tim Hingston',
-    avatarUrl: 'https://avatars3.githubusercontent.com/u/1831709',
+    id: "6",
+    name: "Tim Hingston",
+    avatarUrl: "https://avatars3.githubusercontent.com/u/1831709",
   },
 ];
 
 <Meta title="Components|AvatarList" component={AvatarList} />
 
 <Story name="short">
-    <AvatarList users={users.slice(0, 2)} />
+  <AvatarList users={users.slice(0, 2)} />
 </Story>
 
 <Story name="smallSize">
-    <AvatarList users={users.slice(0, 2)} size="small" />
+  <AvatarList users={users.slice(0, 2)} size="small" />
 </Story>
 
 <Story name="loading">
-    <AvatarList loading />
+  <AvatarList loading />
 </Story>
 
 <Story name="ellipsized">
-    <AvatarList users={users} />
+  <AvatarList users={users} />
 </Story>
 
 <Story name="empty">
-    <AvatarList users={[]} />
+  <AvatarList users={[]} />
 </Story>
-
 
 <Preview withToolbar>
   <Story name="bigUserCount">

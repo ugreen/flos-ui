@@ -1,21 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Avatar, sizes } from '../..';
-import { color, typography } from '../../shared/styles';
+import { Avatar, sizes } from "../..";
+import { color, typography } from "../../shared/styles";
 
 type UserProps = {
   id: string;
   name?: string;
   avatarUrl?: string | null;
-}
+};
 
 type AvatarListProps = {
   loading?: boolean | number;
   userCount?: number;
   size?: keyof typeof sizes;
   users?: UserProps[];
-}
+};
 
 const UserAvatar = styled(Avatar)`
   box-shadow: ${color.lightest} 0 0 0 2px;
@@ -64,25 +64,34 @@ const Users = styled.ul`
 
 // Either pass the full list of users, or a userCount if known
 export const AvatarList = ({
-                             loading = false,
-                             users = [
-                               { id: 'loading', avatarUrl: null, name: 'loading' },
-                               { id: 'loading2', avatarUrl: null, name: 'loading' },
-                               { id: 'loading3', avatarUrl: null, name: 'loading' },
-                             ],
-                             userCount,
-                             size = 'medium', ...props
+  loading = false,
+  users = [
+    { id: "loading", avatarUrl: null, name: "loading" },
+    { id: "loading2", avatarUrl: null, name: "loading" },
+    { id: "loading3", avatarUrl: null, name: "loading" },
+  ],
+  userCount,
+  size = "medium",
+  ...props
 }: AvatarListProps) => {
   const count = userCount || users.length;
   return (
     <Users aria-label="users" {...props}>
       {users.slice(0, 3).map(({ id, name, avatarUrl }: UserProps) => (
         <User key={id}>
-          <UserAvatar size={size} username={name} src={avatarUrl} loading={loading ? 1 : 0} />
+          <UserAvatar
+            size={size}
+            username={name}
+            src={avatarUrl}
+            loading={loading ? 1 : 0}
+          />
         </User>
       ))}
       {count > 3 && (
-        <UserEllipses aria-label={`${count - 3} more user(s)`}> &#43; {count - 3} </UserEllipses>
+        <UserEllipses aria-label={`${count - 3} more user(s)`}>
+          {" "}
+          &#43; {count - 3}{" "}
+        </UserEllipses>
       )}
     </Users>
   );

@@ -5,8 +5,8 @@ import { Icon } from "./icon";
 import { icons } from "../../shared/icons";
 
 type IconProps = {
-    minimal?: boolean;
-}
+  minimal?: boolean;
+};
 
 const Meta = styled.div`
   color: #666;

@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^4.9.8",
+    "dawa-autocomplete2": "^1.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
@@ -24,7 +25,10 @@
     "build-storybook": "NODE_ENV=development build-storybook -s public",
     "build-storybook-docs": "NODE_ENV=development build-storybook -s public --docs",
     "chromatic": "chromatic",
-    "release": "auto shipit --verbose"
+    "release": "auto shipit",
+    "prettier": "prettier --check src/**/*",
+    "prettier:check": "prettier --list-different src/**/*",
+    "prettier:format": "prettier --write src/**/*"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -60,11 +64,13 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-test-renderer": "^16.9.2",
     "@types/styled-components": "^5.0.1",
     "auto": "^9.21.0",
     "cross-env": "^7.0.2",
     "polished": "^3.5.1",
     "prettier": "^2.0.1",
+    "react-test-renderer": "^16.13.1",
     "storybook-addon-material-ui": "^0.9.0-alpha.21",
     "storybook-chromatic": "^3.5.2"
   }

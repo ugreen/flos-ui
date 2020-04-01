@@ -6,7 +6,7 @@ type IconProps = {
   icon: string;
   block?: boolean;
   children?: never;
-}
+};
 
 const Svg: ElementType = styled.svg`
   display: ${(props: IconProps) => (props.block ? "block" : "inline-block")};

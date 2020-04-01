@@ -3,7 +3,6 @@ import React from "react";
 import { Button } from "./button";
 import { Icon } from "../..";
 
-
 export default {
   title: "Components|Button",
   component: Button,
@@ -12,7 +11,9 @@ export default {
 export const allButtons = () => (
   <div>
     <Button appearance="primary">Primary</Button>
-    <Button as="a" appearance="secondary">Secondary</Button>
+    <Button as="a" appearance="secondary">
+      Secondary
+    </Button>
     <Button appearance="tertiary">Tertiary</Button>
     <Button appearance="outline">Outline</Button>
     <Button appearance="primaryOutline">Outline primary</Button>
@@ -68,76 +69,38 @@ allButtons.story = {
 
 export const anchorWrapper = () => (
   <div>
-    <Button
-      appearance="primary"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="primary" href="http://storybook.js.org">
       Primary
     </Button>
-    <Button
-      appearance="secondary"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="secondary" href="http://storybook.js.org">
       Secondary
     </Button>
-    <Button
-      appearance="tertiary"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="tertiary" href="http://storybook.js.org">
       Tertiary
     </Button>
-    <Button
-      appearance="outline"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="outline" href="http://storybook.js.org">
       Outline
     </Button>
-    <Button
-      appearance="primaryOutline"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="primaryOutline" href="http://storybook.js.org">
       Outline primary
     </Button>
-    <Button
-      appearance="secondaryOutline"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="secondaryOutline" href="http://storybook.js.org">
       Outline secondary
     </Button>
-    <Button
-      appearance="primary"
-      isDisabled
-      href="http://storybook.js.org"
-    >
+    <Button appearance="primary" isDisabled href="http://storybook.js.org">
       Disabled
     </Button>
     <br />
-    <Button
-      appearance="primary"
-      isLoading
-      href="http://storybook.js.org"
-    >
+    <Button appearance="primary" isLoading href="http://storybook.js.org">
       Primary
     </Button>
-    <Button
-      appearance="secondary"
-      isLoading
-      href="http://storybook.js.org"
-    >
+    <Button appearance="secondary" isLoading href="http://storybook.js.org">
       Secondary
     </Button>
-    <Button
-      appearance="tertiary"
-      isLoading
-      href="http://storybook.js.org"
-    >
+    <Button appearance="tertiary" isLoading href="http://storybook.js.org">
       Tertiary
     </Button>
-    <Button
-      appearance="outline"
-      isLoading
-      href="http://storybook.js.org"
-    >
+    <Button appearance="outline" isLoading href="http://storybook.js.org">
       Outline
     </Button>
     <Button
@@ -149,32 +112,16 @@ export const anchorWrapper = () => (
       Outline
     </Button>
     <br />
-    <Button
-      appearance="primary"
-      size="small"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="primary" size="small" href="http://storybook.js.org">
       Primary
     </Button>
-    <Button
-      appearance="secondary"
-      size="small"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="secondary" size="small" href="http://storybook.js.org">
       Secondary
     </Button>
-    <Button
-      appearance="tertiary"
-      size="small"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="tertiary" size="small" href="http://storybook.js.org">
       Tertiary
     </Button>
-    <Button
-      appearance="outline"
-      size="small"
-      href="http://storybook.js.org"
-    >
+    <Button appearance="outline" size="small" href="http://storybook.js.org">
       Outline
     </Button>
     <Button

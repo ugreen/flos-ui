@@ -25,12 +25,12 @@ type AvatarProps = {
    * Avatar comes in four sizes. In most cases, you'll be fine with `medium`.
    */
   size?: keyof typeof sizes;
-}
+};
 
 type A11yProps = {
-  'aria-busy'?: boolean;
-  'aria-label'?: string;
-}
+  "aria-busy"?: boolean;
+  "aria-label"?: string;
+};
 
 export const sizes = {
   large: 40,
@@ -40,7 +40,7 @@ export const sizes = {
 } as const;
 
 const Image = styled.div<any>`
-  background: ${props => (!props.loading ? "transparent" : color.light)};
+  background: ${(props) => (!props.loading ? "transparent" : color.light)};
   border-radius: 50%;
   display: inline-block;
   vertical-align: top;
@@ -51,25 +51,33 @@ const Image = styled.div<any>`
   width: ${sizes.medium}px;
   line-height: ${sizes.medium}px;
 
-  ${props => props.size === "tiny" && css`
+  ${(props) =>
+    props.size === "tiny" &&
+    css`
       height: ${sizes.tiny}px;
       width: ${sizes.tiny}px;
       line-height: ${sizes.tiny}px;
     `}
 
-  ${props => props.size === "small" && css`
+  ${(props) =>
+    props.size === "small" &&
+    css`
       height: ${sizes.small}px;
       width: ${sizes.small}px;
       line-height: ${sizes.small}px;
     `}
 
-  ${props => props.size === "large" && css`
+  ${(props) =>
+    props.size === "large" &&
+    css`
       height: ${sizes.large}px;
       width: ${sizes.large}px;
       line-height: ${sizes.large}px;
     `}
 
-  ${props => !props.src && css`
+  ${(props) =>
+    !props.src &&
+    css`
       background: ${!props.loading && "#37D5D3"};
     `}
 
@@ -121,7 +129,13 @@ const Initial = styled.div`
  * - Use an avatar for attributing actions or content to specific users.
  * - The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
  **/
-export const Avatar = ({ loading = false, username = 'loading', src, size = 'medium', ...props }: AvatarProps) => {
+export const Avatar = ({
+  loading = false,
+  username = "loading",
+  src,
+  size = "medium",
+  ...props
+}: AvatarProps) => {
   let avatarFigure = <Icon icon="useralt" />;
   const a11yProps: A11yProps = {};
 
@@ -140,7 +154,13 @@ export const Avatar = ({ loading = false, username = 'loading', src, size = 'med
   }
 
   return (
-    <Image size={size} loading={loading ? 1 : 0} src={src} {...a11yProps} {...props}>
+    <Image
+      size={size}
+      loading={loading ? 1 : 0}
+      src={src}
+      {...a11yProps}
+      {...props}
+    >
       {avatarFigure}
     </Image>
   );
